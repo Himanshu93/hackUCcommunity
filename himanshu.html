@@ -1,0 +1,134 @@
+<html>
+  <head>
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart1);
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart() 
+      {
+        var options = 
+        {
+          title: 'Emotion'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+        var data = google.visualization.arrayToDataTable([
+
+        	[
+        		'tone name', 'score'
+        	],
+        	[
+        		'Anger',
+            	0.201549
+          ],
+          [
+            	'Disgust',
+            	0.037582
+          ],
+          [
+            	'Fear',
+            	0.033641
+          ],
+          [
+            	'Joy',
+            	0.439779
+          ],
+          [
+            	'Sadness',
+            	0.326701
+          ]
+
+        	]);
+
+        chart.draw(data, options);
+
+      }
+
+      function drawChart1()
+      {
+        var options = 
+        {
+          title: 'Language'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+          var data2 = google.visualization.arrayToDataTable([
+
+          [
+            'tone name', 'score'
+          ],
+          [
+            'Analytical',
+            1
+          ],
+          [
+            'Confident',
+            0
+          ],
+          [
+            'Tentative',
+            0
+          ],
+
+          ]);
+
+          chart.draw(data2, options);
+      }
+
+      function drawChart2()
+      {
+        var options = 
+        {
+          title: 'Social Tone'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+          var data3 = google.visualization.arrayToDataTable([
+                
+          [
+            'tone name', 'score'
+          ],
+          [
+            'Openness',
+            0.666403
+          ],
+          [
+            'Conscientiousness',
+            0.4348
+          ],
+          [
+            'Extraversion',
+            0.095541
+          ],
+          [
+            'Agreeableness',
+            0.490196
+          ],
+          [
+            'Emotional Range',
+            0.128253
+          ]
+
+          ]);
+
+          chart.draw(data3, options);
+      }
+
+    </script>
+  </head>
+  <body>
+  <div id="footer">
+    <div id="piechart1" style="width: 500px; height: 500px;"></div>
+    <div id="piechart2" style="width: 500px; height: 500px;"></div>
+    <div id="piechart3" style="width: 500px; height: 500px;"></div>
+    <img src="pic1.png"/>
+    </div>
+  </body>
+</html>
